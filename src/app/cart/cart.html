@@ -1,0 +1,33 @@
+<div class="p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md max-w-xl mx-auto">
+    <h2 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">🛒 Your Cart</h2>
+
+    @if (cartItems.length === 0) {
+    <div class="text-gray-500 dark:text-gray-300 text-center py-8">Your cart is currently empty.</div>
+    }
+
+    @for (item of cartItems; track $index) {
+    <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-700 py-4">
+        <div>
+            <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ item.title }}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{{ item.price | currency }}</p>
+        </div>
+        <button class="text-red-500 hover:text-red-700 transition" (click)="remove(item.id)">
+            Remove
+        </button>
+    </div>
+    }
+
+    @if (cartItems.length) {
+    <div class="mt-6 border-t border-gray-300 dark:border-gray-600 pt-4">
+        <div class="flex justify-between text-lg font-bold text-gray-800 dark:text-white">
+            <span>Total</span>
+            <span>{{ getTotal() | currency }}</span>
+        </div>
+        <button
+            class="w-full mt-4 bg-red-600 hover:bg-red-700 text-white font-medium py-2 rounded transition duration-200"
+            (click)="clear()">
+            Clear Cart
+        </button>
+    </div>
+    }
+</div>

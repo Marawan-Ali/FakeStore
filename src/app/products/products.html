@@ -1,0 +1,72 @@
+<section class="md:w-[90%] mx-auto">
+    <div class="w-full max-w-2xl mx-auto my-4 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch">
+        <input [(ngModel)]="searchValue" (ngModelChange)="getAllProducts()" type="text"
+            class="flex-1 rounded-md border border-gray-300 p-2 text-sm" placeholder="Enter product name..." />
+
+        <select [(ngModel)]="sortOption" (change)="sortProducts()"
+            class="w-full sm:w-48 rounded-md border border-gray-300 p-2 text-sm">
+            <option value="">Sort By</option>
+            <option value="nameAsc">Name (A-Z)</option>
+            <option value="nameDesc">Name (Z-A)</option>
+            <option value="priceAsc">Price (Low To High)</option>
+            <option value="priceDesc">Price (High To Low)</option>
+        </select>
+    </div>
+
+
+    <div class="flex flex-wrap my-4">
+        @for(product of filteredProducts;track $index){
+        <div class="w-1/2 sm:w-1/3 md:w-1/4 xl:w-1/6 p-3">
+            <div
+                class="block bg-white dark:bg-slate-800 h-full rounded-lg shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300">
+                <div class="p-4 flex flex-col h-full">
+                    <a [routerLink]="['/products', product.id]">
+                        <img [src]="product.image" [alt]="product.title" class="w-full h-48 object-contain mb-4" />
+
+                        <span class="text-blue-500 text-xs font-semibold mb-1 capitalize">
+                            {{ product.category }}
+                        </span>
+
+                        <h3 class="text-sm font-medium text-gray-800 dark:text-white line-clamp-2">
+                            {{ product.title }}
+                        </h3>
+                    </a>
+
+                    <div class="mt-auto pt-4 flex justify-between items-center text-sm">
+                        <div class="flex items-center space-x-1 text-yellow-400">
+                            <i class="fa fa-star"></i>
+                            <span class="text-gray-700 dark:text-gray-300">{{ product.rating.rate }}</span>
+                            <span class="text-gray-500 text-xs">({{ product.rating.count }})</span>
+                        </div>
+                        <div class="font-bold text-gray-900 dark:text-white">
+                            {{ product.price | currency: '$' }}
+                        </div>
+                    </div>
+                    <button (click)="addToCart(product)"
+                        class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-1 px-3 rounded transition duration-200">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        }
+    </div>
+
+    @if (hasError) {
+    <div class="bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded mb-4">
+        <strong class="font-bold">Oops!</strong>
+        <span class="block sm:inline">Failed to load products. Please try again later.</span>
+    </div>
+    }
+
+    @if (!hasError && filteredProducts.length === 0) {
+    <div class="w-full text-center py-10">
+        <div class="flex flex-col items-center justify-center space-y-4 text-gray-500 dark:text-gray-400">
+            <i class="fa fa-box-open text-4xl text-gray-400"></i>
+            <p class="text-lg font-semibold">No products found</p>
+            <p class="text-sm">Try searching with a different name or clear the filters.</p>
+        </div>
+    </div>
+    }
+</section>
