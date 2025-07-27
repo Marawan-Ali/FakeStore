@@ -1,6 +1,8 @@
 🛍️ Angular Shop App
 An e-commerce front-end built with Angular 20.1.3, showcasing modern component design, routing, services, cart management, and reactive forms.
 
+🔗 **Live Demo**: (https://fake-store-36fj.vercel.app/products)
+
 📦 Features
 ✅ Product listing with filtering
 
@@ -31,25 +33,7 @@ Node.js >= 18
 
 Angular CLI
 
-Setup
-bash
-Copy
-Edit
-git clone https://github.com/Marawan-Ali/FakeStore
-cd angular-shop-app
-npm install
-ng serve
-🔧 Project Structure
-bash
-Copy
-Edit
-src/
-├── app/
-│   ├── core/          # Services and core logic (e.g. cartService)
-│   ├── features/      # Pages (products, cart, auth)
-│   ├── shared/        # Shared UI components
-│   ├── app-routing    # Routes configuration
-│   └── app.component  # Root component
+
 📍 Notes
 This is a front-end demo app.
 
