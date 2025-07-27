@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideToastr(),
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideClientHydration(withEventReplay()),
+    provideRouter(routes, withHashLocation()), provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch(), withInterceptors([loaderInterceptor, errorHandlingInterceptor]))
   ],
 };
