@@ -1,59 +1,76 @@
-# App
+🛍️ Angular Shop App
+An e-commerce front-end built with Angular 20.1.3, showcasing modern component design, routing, services, cart management, and reactive forms.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+📦 Features
+✅ Product listing with filtering
 
-## Development server
+✅ Product detail pages
 
-To start a local development server, run:
+✅ Add to cart & cart management
 
-```bash
+✅ Toast notifications for feedback
+
+✅ Skeleton loader during API fetch
+
+✅ Placeholder login & registration forms using Reactive Forms
+
+✅ Fully responsive & styled with Tailwind CSS
+
+🛠️ Tech Stack
+Tech	            Description
+Angular 20.1.3	    Core framework
+TypeScript	        Primary language
+Tailwind CSS	    Utility-first CSS framework
+Reactive Forms	    Login form handling
+Toastr          	User notifications
+Fake Store API  	Product data (https://fakestoreapi.com)
+
+🚀 Getting Started
+Prerequisites
+Node.js >= 18
+
+Angular CLI
+
+Setup
+bash
+Copy
+Edit
+git clone https://github.com/Marawan-Ali/FakeStore
+cd angular-shop-app
+npm install
 ng serve
-```
+🔧 Project Structure
+bash
+Copy
+Edit
+src/
+├── app/
+│   ├── core/          # Services and core logic (e.g. cartService)
+│   ├── features/      # Pages (products, cart, auth)
+│   ├── shared/        # Shared UI components
+│   ├── app-routing    # Routes configuration
+│   └── app.component  # Root component
+📍 Notes
+This is a front-end demo app.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Login form is implemented using Reactive Forms, but not yet connected to a backend.
 
-## Code scaffolding
+📸 Screenshots
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+🛍️ Products Page
+![Product Page](./src/screenshots/products.png)
 
-```bash
-ng generate component component-name
-```
+📄 Product Details
+![Product Page](./src/screenshots/productDetails.png)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+🌙 Dark Mode
+![Product Page](./src/screenshots/dark.png)
 
-```bash
-ng generate --help
-```
+🗂️ Categories
+![Product Page](./src/screenshots/categories.png)
 
-## Building
+🛒 Cart
+![Product Page](./src/screenshots/cart.png)
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🔐 Login Page
+![Product Page](./src/screenshots/login.png)
