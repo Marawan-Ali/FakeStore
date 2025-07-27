@@ -1,7 +1,7 @@
 🛍️ Angular Shop App
 An e-commerce front-end built with Angular 20.1.3, showcasing modern component design, routing, services, cart management, and reactive forms.
 
-🔗 **Live Demo**: (https://fake-store-36fj.vercel.app/products)
+🔗 **Live Demo**: (fake-store-sigma.vercel.app)
 
 📦 Features
 ✅ Product listing with filtering
